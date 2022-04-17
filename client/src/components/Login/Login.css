@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+.login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(160, 158, 158, 0.1);
+}
+
+.menu {
+  margin-top: 8em;
+
+  border-radius: 8px;
+  background-color: white;
+}
+
+.title {
+  font-family: "Poppins", sans-serif;
+  color: black;
+  font-weight: 400;
+  padding-top: 8px;
+}
+
+.head {
+  margin-left: 15px;
+}
+
+.close {
+  background-color: white;
+  border: none;
+  font-size: 1.3rem;
+}
+
+.active-tab {
+  border-bottom: 2px solid black;
+}
+
+.tabs {
+  font-family: "Poppins", sans-serif;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 5px;
+  list-style: none;
+  text-align: start;
+  justify-content: start;
+  text-decoration: none;
+  margin-left: -10px;
+  border-bottom: 1px solid rgb(186, 186, 186);
+}
+
+.content {
+  display: none;
+}
+
+.active-content {
+  display: contents;
+}
+
+.tab {
+  color: black;
+  font-weight: 300;
+  text-decoration: none;
+  font-size: medium;
+  color: rgb(83, 82, 82);
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: black;
+}
+.form-label {
+  font-size: 15px;
+  float: left;
+}
+
+.content-tabs {
+  margin-left: -13px;
+}
+
+.form-check-label {
+  font-size: 14px;
+}
+
+.label-link {
+  margin-left: -20px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.label-link:hover {
+  color: rgb(112, 112, 112);
+}
+.detailInfo {
+  display: none;
+}
+
+.active-detailInfo {
+  display: contents;
+}
+
+.forgot-password {
+  font-size: 14px;
+  margin-left: -3px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.signin-button {
+  border-radius: 8px;
+  background-color: black;
+  color: white;
+  border: black;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.fb {
+  color: #3b5998;
+  border-radius: 8px;
+}
+
+.link-btn {
+  border-radius: 8px;
+  background-color: white;
+  padding-top: 6px;
+  border: 1px solid black;
+  padding-bottom: 6px;
+}
+
+.register {
+  color: rgb(65, 65, 65);
+  font-size: 15px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.form {
+  margin-left: -10px;
+}
+
+.policy {
+  justify-items: left;
+  justify-content: left;
+  font-size: 14px;
+  margin-left: -10px;
+}
+
+.terms {
+  text-align: left;
+}
+.signedin {
+  margin-left: -10px;
+}
+
+.links {
+  margin-left: -20px;
+}
+
+.links,
+.link-btn,
+.signin-button {
+  font-size: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}

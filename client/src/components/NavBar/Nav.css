@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+.login-btn {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: rgb(202, 198, 198);
+}
+
+.col-first {
+  margin-left: -3em;
+}
+
+.col-third {
+  margin-left: 3em;
+}
+.col-2-first {
+  margin-left: -3.5em;
+}
+
+.NavbarItems {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  margin-top: 30px;
+}
+.navbar-logo {
+  justify-self: center;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 2em;
+  font-family: "Bebas Neue", cursive;
+}
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 0px;
+  list-style: none;
+  text-align: center;
+  justify-content: end;
+}
+
+.nav-links-mobile {
+  color: black;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.nav-menu1 {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 5px;
+  list-style: none;
+  text-align: center;
+  justify-content: start;
+}
+.nav-links1 {
+  color: black;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.01rem;
+  border-radius: 8px;
+}
+
+.nav-links2 {
+  color: black;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.01rem;
+  border-radius: 8px;
+}
+.nav-links {
+  color: black;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.main {
+  text-decoration: none;
+  color: black;
+}
+
+.main:hover {
+  color: #44494f;
+}
+
+.nav-links1.active {
+  font-weight: bold;
+}
+
+.nav-links:hover {
+  color: black;
+  background-color: rgb(202, 198, 198);
+}
+
+.nav-links1:hover {
+  color: black;
+  background-color: rgb(202, 198, 198);
+}
+
+.nav-links-mobile {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.form-control:focus {
+  box-shadow: inset 0 1px 1px rgba(71, 71, 71, 0.075),
+    0 0 8px rgba(153, 152, 152, 0.6);
+  border-color: #44494f !important;
+}
+
+.nav-search-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .NavbarItems {
+    position: relative;
+  }
+
+  .nav-menu1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  .nav-menu1.active {
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+    background-color: white;
+  }
+
+  .nav-links1 {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+
+  .nav-links1:hover {
+    color: rgb(217, 214, 214);
+    border-radius: 0;
+    background-color: none;
+  }
+
+  .navbar-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: -10px;
+    transform: translate(25%, 50%);
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .fa-times {
+    font-size: 2rem;
+  }
+
+  .nav-links-mobile {
+    display: block;
+    text-align: center;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    border-radius: 4px;
+    width: 80%;
+    text-decoration: none;
+    background: black;
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .nav-search-mobile {
+    display: block;
+  }
+
+  .col-sm-3 {
+    display: none;
+  }
+
+  .nav-links-mobile:hover {
+    color: grey;
+  }
+  .nav-links1.active {
+    font-weight: bold;
+    color: black;
+    border-bottom: 1px solid white;
+  }
+
+  .nav-links.active {
+    border-bottom: 2px solid black;
+  }
+}
