@@ -1,0 +1,26 @@
+.homepage-container {
+  margin-top: 11em;
+}
+
+.service {
+  color: darkgrey;
+  font-size: 1em;
+}
+
+.image-home {
+  margin-top: 5em;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.title-home {
+  margin-top: -4em;
+  font-weight: bolder;
+  color: white;
+  font-size: 3em;
+  border-bottom: none;
+  list-style: none;
+}
+.home-link {
+  text-decoration: none;
+}

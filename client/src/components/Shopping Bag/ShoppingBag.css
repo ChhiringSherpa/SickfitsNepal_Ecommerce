@@ -1,0 +1,48 @@
+.isnotloggedinshoppingbag {
+  margin-top: 10em;
+}
+
+.shoppingbag-login {
+  color: white;
+  background-color: black;
+  border-radius: 8px;
+  font-size: 1.2em;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.shoppingbag-login:hover {
+  background-color: rgb(49, 49, 49);
+}
+
+.shoppingbag-paragraph {
+  font-size: 1.2em;
+}
+
+.shoppingbag-title {
+  font-size: 4em;
+}
+
+.billing {
+  margin-top: 10em;
+}
+
+.checkoutbtn {
+  color: white;
+  background-color: black;
+  border-color: 1px solid black;
+  border-radius: 8px;
+}
+
+.deletebtn {
+  cursor: pointer;
+}
+
+.titlebag {
+  margin-right: 3.5em;
+}
+
+.bill {
+  position: absolute;
+  margin-left: 58em;
+}

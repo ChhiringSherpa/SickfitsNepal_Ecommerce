@@ -4,10 +4,14 @@ const checkAuthMiddleware = require("../middleware/check-auth");
 
 const router = express.Router();
 
-router.post("/", postsController.save);
+router.post("/", postsController.upload, postsController.save);
 router.get("/", postsController.index);
+router.get("/men", postsController.index3);
+
+router.get("/women", postsController.index2);
 router.get("/:id", postsController.show);
-router.patch("/:id", checkAuthMiddleware.checkAuth, postsController.update);
-router.delete("/:id", checkAuthMiddleware.checkAuth, postsController.destroy);
+router.patch("/:id", postsController.upload, postsController.update);
+
+router.delete("/:id", postsController.destroy);
 
 module.exports = router;

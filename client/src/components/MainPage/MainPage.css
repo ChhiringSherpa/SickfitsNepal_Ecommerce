@@ -1,18 +1,16 @@
 .all {
-  border: 1px solid black;
-  float: start;
+  font-family: "Poppins", sans-serif;
 }
-
 .link-title {
   cursor: pointer;
-  width: 30%;
+  width: 5%;
   padding-bottom: 10px;
 }
 
 .active-link-title {
   border-bottom: 2px solid black;
-
   transition: border 0.3s;
+  width: 37%;
 }
 
 .category-border {
@@ -101,6 +99,44 @@
 .categories:hover {
   background-color: rgb(202, 201, 201);
 }
-.card {
-  width: 18rem;
+
+.addtowishlist_button {
+  background-color: transparent;
+  border-radius: 8px;
+  margin-left: 10%;
+  border: none;
+}
+
+.addtowishlist_button:hover {
+  background-color: lightgray;
+}
+.card-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.image {
+  cursor: pointer;
+}
+.allproduct_detail {
+  font-size: 15px;
+}
+.selector {
+  margin-top: 10em;
+  background-color: transparent;
+
+  margin-left: 13.5em;
+}
+
+.products {
+  margin-left: 20em;
+  margin-top: 10em;
+}
+.active-categories {
+  font-weight: bold;
+  color: black;
+}
+
+.active-clothing {
+  color: black;
 }

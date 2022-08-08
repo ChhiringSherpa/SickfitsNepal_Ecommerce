@@ -1,45 +1,45 @@
-import React, { useReducer, createContext } from "react";
+//importing other components and dependencies
+import React, { createContext } from "react";
 import { HashRouter } from "react-router-dom";
 import { Route, Switch } from "react-router";
-import Login from "./components/Login/Login";
-import Register from "./Register";
 import NoMatchPage from "./NoMatchPage";
-import Dashboard from "./Dashboard";
+import Dashboard from "./components/Admin/Dashboard";
 import NavBar from "./components/NavBar/NavBar";
-import Men from "./Men";
-import Women from "./Women";
-import ProductsList from "./ProductsList";
-import Store from "./Store";
+import Women from "./components/MainPage/Women";
 import MainPage from "./components/MainPage/MainPage";
-import Order from "./Order";
-import { reducer, initialState } from "../src/reducer/UseReducer";
+import Products from "./components/MainPage/Products";
+import WishList from "./components/WishList/WishList";
+import ShoppingBag from "./components/Shopping Bag/ShoppingBag";
+import LookBook from "./components/LookBooks/LookBook";
+import Homepage from "./components/HomePage/Homepage";
+import AddProduct from "./components/Admin/AddProduct";
+import OrderList from "./components/Admin/OrderList";
 
 export const UserContext = createContext();
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
-
   return (
-    <UserContext.Provider value={{ state, dispatch }}>
-      <HashRouter>
-        <NavBar />
-s
-        <div className="container-fluid">
-          <Switch>
-            <Route path="/" exact={true} component={MainPage} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/men" component={Men} />
-            <Route path="/women" component={Women} />
-            <Route path="/store" component={Store} />
-            <Route path="/order" component={Order} />
-            <Route path="/products" component={ProductsList} />
-            <Route path="*" component={NoMatchPage} />
-          </Switch>
-        </div>
-      </HashRouter>
-    </UserContext.Provider>
+    <HashRouter>
+      <NavBar />
+      <div className="container-fluid">
+        <Switch>
+          {/* creating route paths for other component */}
+          <Route path="/" exact={true} component={Homepage} />
+          <Route path="/men" component={MainPage} />
+          <Route path="/women" component={Women} />
+          <Route path="/lookbook" component={LookBook} />
+          <Route path="/shoppingbag" component={ShoppingBag} />
+          <Route path="/products/:id" component={Products} />
+          <Route path="/wishlist" component={WishList} />
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/addproduct" component={AddProduct} />
+
+          <Route path="/orderlist" component={OrderList} />
+
+          <Route path="*" component={NoMatchPage} />
+        </Switch>
+      </div>
+    </HashRouter>
   );
 }
 

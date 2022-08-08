@@ -1,4 +1,4 @@
-const models = require("../../qq/models");
+const models = require("../models");
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const Validator = require("fastest-validator");
@@ -76,6 +76,7 @@ async function login(req, res) {
                   email: user.email,
                   userName: user.name,
                   userId: user.id,
+                  phone: user.phone,
                 },
                 process.env.JWT_KEY,
                 function (err, token) {
@@ -83,6 +84,10 @@ async function login(req, res) {
                     success: true,
                     message: "Authentication successful!",
                     token: token,
+                    user: user.name,
+                    email: user.email,
+                    user_id: user.id,
+                    phone: user.phone,
                   });
                 }
               );

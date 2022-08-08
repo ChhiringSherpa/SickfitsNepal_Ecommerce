@@ -1,0 +1,36 @@
+.isnotloggedinwishlist {
+  margin-top: 10em;
+}
+
+.isloggedinwishlist {
+  margin-top: 10em;
+}
+
+.wishlist-login {
+  color: white;
+  background-color: black;
+  border-radius: 8px;
+  font-size: 1.2em;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.wishlist-login:hover {
+  background-color: rgb(49, 49, 49);
+}
+
+.wishlist-paragraph {
+  font-size: 1.2em;
+}
+
+.wishlist-title {
+  font-size: 4em;
+}
+
+.wishlistscontainer {
+  margin-left: 2em;
+}
+.wishlistsize {
+  width: 80%;
+  border-radius: 8px;
+}

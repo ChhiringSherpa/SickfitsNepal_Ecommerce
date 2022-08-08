@@ -1,22 +1,50 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./Nav.css";
-import "./Button.css";
 import {
   HiOutlineUser,
   HiOutlineShoppingBag,
   HiOutlineHeart,
 } from "react-icons/hi";
-
 import Login from "../Login/Login";
 import Cookies from "js-cookie";
+import { useHistory } from "react-router-dom";
 
 const NavBar = (props) => {
   const token = Cookies.get("Auth");
+  const history = useHistory();
 
   const logoutClick = () => {
     Cookies.remove("Auth");
+    localStorage.clear();
+    history.push(`/`);
     window.location.reload();
+  };
+
+  const AdminMenu = () => {
+    if (localStorage.getItem("email") === "admin@admin.com") {
+      return (
+        <>
+          <div className=" col-lg-10  admin-links">
+            <NavLink
+              className="admin-navlink "
+              to="/addproduct"
+              activeclassname="active"
+            >
+              <li>Add Product</li>
+            </NavLink>
+
+            <NavLink
+              className="admin-navlink ms-1"
+              to="/orderlist"
+              activeclassname="active"
+            >
+              <li>Orders</li>
+            </NavLink>
+          </div>
+        </>
+      );
+    }
   };
   const RenderMenu = () => {
     if (token) {
@@ -24,7 +52,7 @@ const NavBar = (props) => {
         <>
           <NavLink
             className="nav-links "
-            to="/dashboard"
+            to="/wishlist"
             activeclassname="active"
           >
             <li>
@@ -32,7 +60,11 @@ const NavBar = (props) => {
             </li>
           </NavLink>
 
-          <NavLink className="nav-links" to="/order" activeclassname="active">
+          <NavLink
+            className="nav-links"
+            to="/shoppingbag"
+            activeclassname="active"
+          >
             <li>
               <HiOutlineShoppingBag fontSize="1.3em" />
             </li>
@@ -45,13 +77,12 @@ const NavBar = (props) => {
                 data-bs-toggle="dropdown"
               >
                 <HiOutlineUser fontSize="1.3em" />
-                &nbsp; <span className="userName">Welcome</span>
+                &nbsp;{" "}
+                <span className="userName">{localStorage.getItem("user")}</span>
               </span>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <span className="dropdown-item" onClick={logoutClick}>
-                    Logout
-                  </span>
+                <li onClick={logoutClick}>
+                  <a className="dropdown-item">Logout</a>
                 </li>
               </ul>
             </li>
@@ -62,17 +93,24 @@ const NavBar = (props) => {
       return (
         <>
           <li className="nav-links " activeclassname="active">
-            <HiOutlineUser
-              fontSize="1.3em"
-              className="login-btn"
-              onClick={() => setButtonPopup(true)}
-            />
+            <div>
+              <button
+                className="login-btn"
+                onClick={() => setModal(true)}
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <HiOutlineUser fontSize="1.3em" />
+              </button>
+            </div>
 
-            <Login trigger={buttonPopup} setTrigger={setButtonPopup}></Login>
+            <Login trigger={modal} setTrigger={setModal} />
           </li>
+
           <NavLink
             className="nav-links "
-            to="/dashboard"
+            to="/wishlist"
             activeclassname="active"
           >
             <li>
@@ -80,7 +118,11 @@ const NavBar = (props) => {
             </li>
           </NavLink>
 
-          <NavLink className="nav-links" to="/order" activeclassname="active">
+          <NavLink
+            className="nav-links"
+            to="/shoppingbag"
+            activeclassname="active"
+          >
             <li>
               <HiOutlineShoppingBag fontSize="1.3em" />
             </li>
@@ -90,11 +132,11 @@ const NavBar = (props) => {
     }
   };
   const [isMobile, setIsMobile] = useState(true);
-  const [buttonPopup, setButtonPopup] = useState(false);
 
+  const [modal, setModal] = useState(false);
   return (
-    <div>
-      <div className="container">
+    <div className="fixed-top navigation">
+      <div className="container mt-3">
         <div className="row">
           <nav className="NavbarItems">
             <div className="menu-icon" onClick={() => setIsMobile(!isMobile)}>
@@ -119,7 +161,7 @@ const NavBar = (props) => {
                 </NavLink>
                 <NavLink
                   className="nav-links1 "
-                  to="/lookbooks"
+                  to="/lookbook"
                   activeclassname="active"
                 >
                   <li>Lookbooks</li>
@@ -142,8 +184,11 @@ const NavBar = (props) => {
         </div>
       </div>
 
-      <div className="container">
+      <div className="container mt-2">
         <div className="row">
+          <div className="col-lg-8">
+            <AdminMenu />
+          </div>
           <div className="col col-2-first">
             <ul className={!isMobile ? "nav-menu1 active" : "nav-menu1"}></ul>
           </div>
